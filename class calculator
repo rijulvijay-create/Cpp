@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+
+class Calculator{
+	
+	unsigned int a;
+		unsigned int b;
+		unsigned int c;
+		
+		public:
+		 void add (int a, int b){
+		 	cout<< "add(int a, int b): " << a+b << endl;
+		 }
+		 void add (int a, int b, int c){
+		 	cout<< "add(int a, int b, int c): " << a+b+c << endl;
+		 	}
+		 	void add (double a, double b){
+		 	cout<< "add(double a, double b): " << a+b << endl;
+		 }
+};
+int main(){
+	Calculator obj;
+	obj.add(5,10);
+		obj.add(5,10,15);
+			obj.add(9.5,10.4);
+
+	return 0;
+}
