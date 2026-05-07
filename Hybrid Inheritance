@@ -1,0 +1,90 @@
+#include<iostream>
+using namespace std;
+
+class Company{
+
+    const string NAME = "TCS";
+
+    public:
+
+    virtual string getName(){
+        return NAME;
+    }
+
+    void message(){
+        cout << "Welcome on BOARD" << endl;
+    }
+};
+
+class Employee : virtual public Company{
+
+    public:
+
+    void guidelines(){
+        cout << "Maintain the Office Timing." << endl;
+    }
+};
+
+class Manager : public Employee{
+
+    public:
+
+    void task(){
+        cout << "Meetings..." << endl;
+    }
+};
+
+class Engineer : virtual public Employee{
+
+    public:
+
+    void task(){
+        cout << "Coding..." << endl;
+    }
+};
+
+class Admin : public Employee{
+
+    public:
+
+    void task(){
+        cout << "Administration Work..." << endl;
+    }
+};
+
+class College{
+
+    const string NAME = "JECRC";
+
+    public:
+};
+
+class Intern : public College, virtual public Employee{
+
+    public:
+};
+
+class Project : public Engineer, public Intern{
+
+    public:
+
+    void projectDetails(){
+        cout << "Web Application - Java Full-Stack ..." << endl;
+    }
+};
+
+// Driver Code
+int main(){
+
+    Project p;
+
+    cout << p.getName() << " - ";
+
+    p.message();
+    p.guidelines();
+    p.task();
+
+    p.projectDetails();
+
+    return 0;
+}
