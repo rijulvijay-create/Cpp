@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+
+class Array{
+	
+	int N;
+	int*array;
+	public:
+		Array(int N){
+		this->N=N;
+		}
+		
+		~Array(){
+		delete[] array;
+		}
+	
+		void createArray(){
+			array = new int [N]();
+						
+		}
+		
+		void inputArray() {
+
+        cout << "Enter " << N << " elements:\n";
+
+        for(int i = 0; i < N; i++) {
+            cin >> array[i];
+        }
+    }
+		
+		
+		void printArray() const{
+		for(int i=0; i<N; i++){
+			cout<< array[i] <<" ";
+		}
+		}
+	
+};
+
+
+
+int main(){
+	int N;
+	cout<< "N:";
+	cin>> N;
+	Array obj(N);
+	obj.createArray();
+
+    obj.inputArray();
+
+    cout << "Array Elements: ";
+	obj.printArray();
+	
+	
+	
+return 0;
+}
