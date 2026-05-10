@@ -1,0 +1,79 @@
+#include<iostream>
+using namespace std;
+
+class Array {
+
+    int N;
+    int **array;
+
+public:
+
+       Array(int N) {
+        this->N = N;
+        createArray();
+    }
+
+      ~Array() {
+
+        for(int i = 0; i < N; i++) {
+            delete[] array[i];
+        }
+
+        delete[] array;
+    }
+
+        void createArray() {
+
+        array = new int*[N];
+
+        for(int i = 0; i < N; i++) {
+            array[i] = new int[N];
+        }
+    }
+
+    void insertArray() {
+
+        cout << "Enter matrix elements:\n";
+
+        for(int i = 0; i < N; i++) {
+
+            for(int j = 0; j < N; j++) {
+
+                cin >> array[i][j];
+            }
+        }
+    }
+    void printArray() {
+
+        cout << "\nArray Elements:\n";
+
+        for(int i = 0; i < N; i++) {
+
+            for(int j = 0; j < N; j++) {
+
+                cout << array[i][j] << " ";
+            }
+
+            cout << endl;
+        }
+    }
+    
+    
+    
+};
+
+int main() {
+
+    int N;
+
+    cout << "N: ";
+    cin >> N;
+
+    Array obj(N);
+
+    obj.insertArray();
+
+    obj.printArray();
+
+    return 0;
+}
