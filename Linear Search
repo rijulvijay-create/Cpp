@@ -1,0 +1,30 @@
+// Linear Search: Find target in array, return its index (or -1 if not found)
+// Time: O(n) | Space: O(1)
+
+#include <iostream>
+using namespace std;
+
+int linearSearch(int arr[], int n, int target) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == target) {
+            return i;    // Target found at index i
+        }
+    }
+    return -1;          // Target not found
+}
+
+int main() {
+    int arr[] = {5, 2, 8, 1, 9, 3, 7};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int target = 9;
+
+    int result = linearSearch(arr, n, target);
+
+    if (result != -1)
+        cout << "Found " << target << " at index " << result << endl;
+    else
+        cout << "Target not found!" << endl;
+
+    return 0;
+}
+// Output: Found 9 at index 4
