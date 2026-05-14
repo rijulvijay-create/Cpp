@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+class Node {
+public:
+    int data;
+    Node* next;
+
+    Node(int value) {
+        data = value;
+        next = NULL;
+    }
+};
+
+int main() {
+
+    // Creating nodes
+    Node* head = new Node(10);
+    Node* second = new Node(20);
+    Node* third = new Node(30);
+    Node* fourth = new Node(40);
+    Node* fifth = new Node(50);
+
+    // Connecting nodes
+    head->next = second;
+    second->next = third;
+    third->next = fourth;
+    fourth->next = fifth;
+
+    // Creating cycle
+    fifth->next = third;
+
+    // Printing linked list with limited steps
+    // so infinite loop does not happen
+
+    Node* temp = head;
+
+    cout << "Linked List with Cycle:\n";
+
+    for (int i = 0; i < 12; i++) {
+        cout << temp->data << " -> ";
+        temp = temp->next;
+    }
+
+    cout << "... (cycle continues)";
+
+    return 0;
+}
