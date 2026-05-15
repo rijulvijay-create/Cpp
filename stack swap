@@ -1,0 +1,31 @@
+#include<iostream>
+#include<stack>
+
+using namespace std;
+
+int main() {
+
+    stack<int> _stack01, _stack02;
+
+    _stack01.push(10);
+    _stack01.push(20);
+
+    _stack02.push(100);
+    _stack02.push(200);
+    _stack02.push(300);
+
+    swap(_stack01, _stack02);
+
+    cout << "Stack 01: ";
+
+    while(!_stack01.empty()) {
+
+        cout << " " << _stack01.top();
+
+        _stack01.pop();
+    }
+
+    cout << endl;
+
+    return 0;
+}
